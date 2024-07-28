@@ -1,0 +1,227 @@
+//variables 
+
+//colors
+$grey: hsla(0, 0%, 59%, 1);
+$black: hsla(209, 33%, 12%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$baby-blue: hsla(223, 100%, 88%, 1);
+$blue: hsla(223, 87%, 63%, 1);
+
+//font-family: 
+$font-family: 'Libre Franklin';
+
+//font-weights
+$fw-300: 300;
+$fw-600: 600;
+$fw-700: 700;
+
+//font-sizes
+$fs-h1-desktop: 3rem;
+$fs-h1-mobile: 1.375rem;
+$fs-p-desktop: 1.25rem;
+$fs-p-mobile: 0.75rem;
+$fs-button-input-desktop: 1rem;
+$fs-button-input-mobile: 0.75rem;
+$fs-copyright-desktop: 0.75rem;
+$fs-copyright-mobile: 0.625rem;
+
+$lh-h1-desktop: 3.75rem;
+$lh-h1-mobile: 2rem;
+$lh-button-input-desktop: 1.25rem;
+$lh-button-input-mobile: 1rem;
+
+
+//mixins
+@mixin container($max-width: 1440px, $margin: 0, $padding: 0, $border-radius: 0) {
+    max-width: $max-width;
+    width: 100%;
+    margin: $margin;
+    padding: $padding;
+    border-radius: $border-radius;
+}
+
+@mixin flex($flex-direction: row, $justify-content: center, $align-items: center, $gap: 0) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin grid($grid-template-columns: 1fr, $gap: 0) {
+    display: grid;
+    grid-template-columns: $grid-template-columns;
+    gap: $gap;
+}
+
+@mixin text($color: $grey, $font-size: $fs-p-desktop, $font-weight: $fw-600, $line-height: normal, $letter-spacing: normal) {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-family: $font-family;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin button($background-color: $blue, $padding: 1.1875rem 3.875rem, $border-radius: 28px) {
+    background-color: $background-color;
+    padding: $padding;
+    border-radius: $border-radius;
+    box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.23);
+}
+
+
+//utility classes
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    @include container( $max-width: 1440px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 3.5rem);
+    padding-block-start: 5rem;
+}
+
+.ping-content {
+    @include container($max-width: 637px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 1.5rem);
+}
+
+.ping-content h1 {
+    @include text($font-size: $fs-h1-desktop, $font-weight: $fw-300, $line-height: $lh-h1-desktop);
+}
+
+.ping-content h1 span {
+    @include text($color: $black, $font-weight: $fw-700, $line-height: $lh-h1-desktop, $font-size: $fs-h1-desktop);
+}
+
+.ping-content p {
+    @include text($font-size: $fs-p-desktop, $font-weight: $fw-300, $color: $black);
+    margin-top: -2.5rem;
+}
+
+#form {
+    @include container($max-width: 637px, $margin: 0 auto);
+    @include flex($justify-content: space-between);
+}
+
+.form-group {
+    @include flex($flex-direction: column, $align-items: flex-start, $gap: 3rem);
+    @include container($max-width: 421px);
+}
+
+.form-group .error-message {
+    @include text($font-size: 12px, $font-weight: $fw-300, $color: #FF5466);
+    font-style: italic;
+    margin-left: 1rem
+}
+
+.form-group .input {
+    @include container($max-width: 321px, $padding: 1.125rem 1.875rem, $border-radius: 28px);
+    @include text($font-size: $fs-button-input-desktop, $font-weight: $fw-300, $color: $black, $line-height: $lh-button-input-desktop);
+    border: 1px solid $baby-blue;
+}
+
+.form-button {
+    margin-block-end: auto;
+}
+
+#form .input::placeholder {
+    @include text($color: $baby-blue, $font-size: $fs-button-input-desktop, $font-weight: $fw-300, $line-height: $lh-button-input-desktop);
+}
+
+#form .button {
+    @include button;
+    @include text($font-size: $fs-button-input-desktop, $font-weight: $fw-600, $color: $white, $line-height: $lh-button-input-desktop);
+    border: none;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: hsla(223, 87%, 63%, 0.8);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: hsla(223, 87%, 63%, 0.8);
+    }
+}
+
+.illustration-img {
+    max-width: 640px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.socials {
+    @include container($max-width: 230px, $margin: 0 auto);
+    @include flex($flex-direction: column,  $gap: 1.5rem);
+}
+
+.social-icons {
+    @include container($max-width: 120px, $margin: 0 auto);
+    @include flex($gap: 1.5rem);
+}
+
+
+.copyright {
+    @include flex($gap: .2rem);
+}
+
+.copyright p {
+    @include text($font-size: $fs-copyright-desktop, $font-weight: $fw-300, $color: $grey);
+    white-space: nowrap;
+}
+
+.copyright img {
+    width: 10px;
+    height: 10px;
+}
+
+@media (max-width: 670px) {
+    
+    .container {
+        @include container($max-width: 375px, $margin: 0 auto, $padding: 1rem);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 1.5rem);
+        overflow-x: hidden
+    };
+    
+
+    .ping-content h1 {
+        @include text($font-size: $fs-h1-mobile, $line-height: $lh-h1-mobile, $font-weight: $fw-300);
+    }
+
+    .ping-content img {
+        max-width: 56px;
+    }
+
+    .ping-content h1 span {
+        @include text($font-size: $fs-h1-mobile, $line-height: $lh-h1-mobile, $color: $black, $font-weight: $fw-700);
+        text-align: center;
+    }
+
+    .ping-content p {
+        @include text($font-size: $fs-p-mobile, $color: $black, $font-weight: $fw-300, $line-height: $lh-h1-mobile);
+    
+    }
+    
+    #form {
+        @include flex($flex-direction: column, $gap: 1.5rem);
+    }
+
+    .form-group {
+        @include container($max-width: 321px, $margin: 0 auto);
+    }
+
+    .form-group > .input {
+        @include container($max-width: 251px, $padding: 1rem 1.5rem, $border-radius: 28px, $margin: 0 auto);
+    }
+    
+    .form-group .error-message {
+        margin: 0 auto;
+        margin-top: -2rem;
+        padding-block-end: 2rem;
+    }
+};
+

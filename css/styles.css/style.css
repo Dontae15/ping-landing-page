@@ -1,0 +1,280 @@
+body {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  padding-block-start: 5rem;
+}
+
+.ping-content {
+  max-width: 637px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ping-content h1 {
+  color: hsl(0, 0%, 59%);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 3.75rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+}
+
+.ping-content h1 span {
+  color: hsl(209, 33%, 12%);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.75rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+}
+
+.ping-content p {
+  color: hsl(209, 33%, 12%);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: normal;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+  margin-top: -2.5rem;
+}
+
+#form {
+  max-width: 637px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 421px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.form-group .error-message {
+  color: #FF5466;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: normal;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+.form-group .input {
+  max-width: 321px;
+  width: 100%;
+  margin: 0;
+  padding: 1.125rem 1.875rem;
+  border-radius: 28px;
+  color: hsl(209, 33%, 12%);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+  border: 1px solid hsl(223, 100%, 88%);
+}
+
+.form-button {
+  margin-block-end: auto;
+}
+
+#form .input::-moz-placeholder {
+  color: hsl(223, 100%, 88%);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+}
+
+#form .input::placeholder {
+  color: hsl(223, 100%, 88%);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+}
+
+#form .button {
+  background-color: hsl(223, 87%, 63%);
+  padding: 1.1875rem 3.875rem;
+  border-radius: 28px;
+  box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.23);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+  border: none;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+#form .button:hover {
+  background-color: hsla(223, 87%, 63%, 0.8);
+  cursor: pointer;
+}
+#form .button:active {
+  background-color: hsla(223, 87%, 63%, 0.8);
+}
+
+.illustration-img {
+  max-width: 640px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.socials {
+  max-width: 230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-icons {
+  max-width: 120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.copyright p {
+  color: hsl(0, 0%, 59%);
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: normal;
+  font-family: "Libre Franklin";
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+
+.copyright img {
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 670px) {
+  .container {
+    max-width: 375px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: hidden;
+  }
+  .ping-content h1 {
+    color: hsl(0, 0%, 59%);
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 2rem;
+    font-family: "Libre Franklin";
+    letter-spacing: normal;
+  }
+  .ping-content img {
+    max-width: 56px;
+  }
+  .ping-content h1 span {
+    color: hsl(209, 33%, 12%);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 2rem;
+    font-family: "Libre Franklin";
+    letter-spacing: normal;
+    text-align: center;
+  }
+  .ping-content p {
+    color: hsl(209, 33%, 12%);
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 2rem;
+    font-family: "Libre Franklin";
+    letter-spacing: normal;
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .form-group {
+    max-width: 321px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 0;
+  }
+  .form-group > .input {
+    max-width: 251px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    border-radius: 28px;
+  }
+  .form-group .error-message {
+    margin: 0 auto;
+    margin-top: -2rem;
+    padding-block-end: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
